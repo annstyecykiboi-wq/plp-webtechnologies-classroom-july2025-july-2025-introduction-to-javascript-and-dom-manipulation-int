@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A web page about jaguars, featuring facts, habitats, media, and a conservation form with JavaScript interactions.">
+    <title>Jaguar Conservation Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jaguar Conservation Hub</h1>
+        <p>Learn about jaguars and support their conservation.</p>
+    </header>
+
+    <main>
+        <section aria-labelledby="facts-heading">
+            <h2 id="facts-heading">Jaguar Facts</h2>
+            <p>Discover key traits of these majestic big cats.</p>
+            <ul class="jaguar-facts">
+                <li>Third-largest big cat, after tigers and lions</li>
+                <li>Known for powerful bite, can crush turtle shells</li>
+                <li>Solitary, except mothers with cubs</li>
+                <li>Live 12-15 years in the wild</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="habitat-heading">
+            <h2 id="habitat-heading">Jaguar Habitats</h2>
+            <p>Jaguars thrive in diverse ecosystems.</p>
+            <table class="habitats-table">
+                <caption>Jaguar Habitat Regions</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Region</th>
+                        <th scope="col">Countries</th>
+                        <th scope="col">Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Amazon Basin</td>
+                        <td>Brazil, Peru</td>
+                        <td>Rainforests, rivers</td>
+                    </tr>
+                    <tr>
+                        <td>Pantanal</td>
+                        <td>Brazil, Bolivia</td>
+                        <td>Wetlands, grasslands</td>
+                    </tr>
+                    <tr>
+                        <td>Central America</td>
+                        <td>Mexico, Belize</td>
+                        <td>Forests, swamps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section aria-labelledby="media-heading">
+            <h2 id="media-heading">Jaguar Media</h2>
+            <p>Explore images and videos of jaguars.</p>
+            <div class="media-container">
+                <figure>
+                    <img src="https://via.placeholder.com/400x300?text=Jaguar" alt="Jaguar resting on a tree branch">
+                    <figcaption>Jaguar in the wild</figcaption>
+                </figure>
+                <figure>
+                    <video controls aria-label="Video of a jaguar stalking prey">
+                        <source src="https://archive.org/download/BigBuckBunny_124/BigBuckBunny_124.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Jaguar in action</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section aria-labelledby="form-heading">
+            <h2 id="form-heading">Support Jaguar Conservation</h2>
+            <p>Fill out the form to get involved. Check donation status below.</p>
+            <form action="/submit" method="post" novalidate id="conservation-form">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="name">Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50"
+                        placeholder="Enter your name" autocomplete="name">
+
+                    <label for="email">Email <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email"
+                        autocomplete="email">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"
+                        placeholder="Enter 10-digit phone number" autocomplete="tel">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Conservation Interest</legend>
+                    <label for="interest">Interest Type <span aria-hidden="true">*</span></label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="donation">Donation</option>
+                        <option value="volunteer">Volunteer</option>
+                        <option value="info">Request Information</option>
+                    </select>
+
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"
+                        placeholder="Your thoughts on jaguar conservation"></textarea>
+                </fieldset>
+
+                <label for="date">Submission Date</label>
+                <input type="text" id="date" name="date" value="2025-09-21" readonly>
+
+                <label><input type="checkbox" id="newsletter" name="newsletter" value="yes"> Receive jaguar
+                    updates</label>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="donation-status" class="status-message">Donation status will appear here.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jaguar Conservation Hub. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
